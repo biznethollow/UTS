@@ -6,7 +6,6 @@ from PyQt6.QtWidgets import (
     QPushButton,
     
 )
-from operation import operate
 
 class template(QWidget): 
     def __init__(self):
@@ -109,4 +108,5 @@ class template(QWidget):
         for i in button:
             layout1.addWidget(i)
         layout2.addLayout(layout1)
+
 
