@@ -8,8 +8,8 @@ from PyQt6.QtWidgets import (
 from template import template  
 
 class Combination(template):  
-    def __init__(self):
-        super().__init__()
+    def __init__(self, output):
+        super().__init__(output)
 
         self.layout1 = QVBoxLayout()
         self.layout2 = QHBoxLayout()
