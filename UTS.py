@@ -5,6 +5,7 @@ from PyQt6.QtWidgets import (
     QApplication,
     QMainWindow,
     QTabWidget,
+    QLineEdit
 )
 from Grid import GridTab
 from Combination import Combination
@@ -12,8 +13,14 @@ from template import template
 
 class MainWindow(QMainWindow, template):
     def __init__(self):
-        super().__init__()
 
+        # Output dan input
+        self.output = QLineEdit()
+        self.output.setReadOnly(True)
+        self.output.setFixedSize(275, 100)
+
+        super().__init__(self.output)
+        
         self.setFixedSize(300, 500)
         self.setWindowTitle("Team 7")
 
@@ -31,8 +38,8 @@ class MainWindow(QMainWindow, template):
         self.tabs.setTabPosition(QTabWidget.TabPosition.North)
         self.tabs.setMovable(True)
 
-        self.tabs.addTab(GridTab(), "Grid")
-        self.tabs.addTab(Combination(), "Combination")
+        self.tabs.addTab(GridTab(self.output), "Grid")
+        self.tabs.addTab(Combination(self.output), "Combination")
 
         self.setCentralWidget(self.tabs)
 
