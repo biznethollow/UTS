@@ -8,8 +8,8 @@ from PyQt6.QtWidgets import (
 from template import template  
 
 class GridTab(template):  
-    def __init__(self):
-        super().__init__()
+    def __init__(self, output):
+        super().__init__(output)
 
         # Buat layout grid
         self.layout = QGridLayout()
