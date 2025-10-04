@@ -2,19 +2,15 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QAction
 from PyQt6.QtWidgets import (
     QWidget,
-    QLineEdit,
     QPushButton,
     
 )
+from operation import operate
 
 class template(QWidget): 
-    def __init__(self):
+    def __init__(self, ouput):
         super().__init__()
-
-        # Output dan input
-        self.output = QLineEdit()
-        self.output.setReadOnly(True)
-        self.output.setFixedSize(275, 100)
+        self.output = ouput
 
         # Semua tombol
         self.button1 = QPushButton("1")
@@ -108,5 +104,4 @@ class template(QWidget):
         for i in button:
             layout1.addWidget(i)
         layout2.addLayout(layout1)
-
 
